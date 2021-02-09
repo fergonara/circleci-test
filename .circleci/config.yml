@@ -1,0 +1,23 @@
+install_helm: &install_helm
+  name: Installing helm
+  command: 
+
+version: 2.1
+jobs:
+  deployment:
+    docker:
+      - image: circleci/python:2.7.14-stretch
+    steps:
+    - helm/install-helm-client:
+        version: v3.4.2
+    - run:
+        command: helm version
+
+orbs:
+  helm: circleci/helm@1.2.0
+
+workflows:
+  version: 2
+    deployment:
+      jobs:
+        - deployment
