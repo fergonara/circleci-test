@@ -1,7 +1,8 @@
 install_helmfile: &install_helmfile
   name: Installing helmfile binary
   command: |
-    wget https://github.com/roboll/helmfile/releases/download/v0.138.4/helmfile_linux_amd64
+    wget https://github.com/roboll/helmfile/releases/download/v0.138.4/helmfile_linux_amd64 -O helmfile
+    chmod +x helmfile
     helmfile --version
 
 version: 2.1
