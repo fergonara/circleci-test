@@ -18,6 +18,6 @@ orbs:
 
 workflows:
   version: 2
-    deployment:
-      jobs:
-        - deployment
+  release:
+    jobs:
+      - deployment
